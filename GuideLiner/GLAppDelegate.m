@@ -7,6 +7,7 @@
 //
 
 #import "GLAppDelegate.h"
+#import "GLHospitalDataStore.h"
 #import "GLHospitalViewController.h"
 
 @implementation GLAppDelegate
@@ -15,10 +16,11 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    // Override point for customization after application launch.
+    // Override point for customization after application launch
+    
     GLHospitalViewController *hospitalsVC = [[GLHospitalViewController alloc] init];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:hospitalsVC];
-    [hospitalsVC.view setBackgroundColor:[UIColor grayColor]];
+    [hospitalsVC.view setBackgroundColor:[UIColor whiteColor]];
     [self.window setRootViewController:navController];
     
     self.window.backgroundColor = [UIColor whiteColor];

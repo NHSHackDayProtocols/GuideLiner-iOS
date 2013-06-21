@@ -11,4 +11,7 @@
 @interface GLHospitalViewController : UITableViewController
 {}
 
+- (void)fetchHospitals;
+- (void)fetchedData:(NSData *)responseData;
+
 @end

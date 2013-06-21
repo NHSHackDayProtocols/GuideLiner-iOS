@@ -17,8 +17,9 @@
 		1A68A5601768E5BA007455BD /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A68A55F1768E5BA007455BD /* Default@2x.png */; };
 		1A68A5621768E5BA007455BD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A68A5611768E5BA007455BD /* Default-568h@2x.png */; };
 		1A68A5A0176E8380007455BD /* GLHospitalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A68A59F176E8380007455BD /* GLHospitalViewController.m */; };
-		1A68A5A3176E8AF7007455BD /* GLDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A68A5A2176E8AF7007455BD /* GLDataStore.m */; };
 		1A68A5A5176E91CF007455BD /* Hospitals.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A68A5A4176E91CF007455BD /* Hospitals.plist */; };
+		1A8AC1FD1773B875005633D8 /* GLProtocolDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8AC1FC1773B875005633D8 /* GLProtocolDataStore.m */; };
+		1A8AC2041773BE7A005633D8 /* GLHospitalDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8AC2031773BE7A005633D8 /* GLHospitalDataStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,9 +39,11 @@
 		1A68A59D176E8209007455BD /* Networking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
 		1A68A59E176E8380007455BD /* GLHospitalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLHospitalViewController.h; sourceTree = "<group>"; };
 		1A68A59F176E8380007455BD /* GLHospitalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLHospitalViewController.m; sourceTree = "<group>"; };
-		1A68A5A1176E8AF7007455BD /* GLDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLDataStore.h; sourceTree = "<group>"; };
-		1A68A5A2176E8AF7007455BD /* GLDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLDataStore.m; sourceTree = "<group>"; };
 		1A68A5A4176E91CF007455BD /* Hospitals.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Hospitals.plist; sourceTree = "<group>"; };
+		1A8AC1FB1773B875005633D8 /* GLProtocolDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLProtocolDataStore.h; sourceTree = "<group>"; };
+		1A8AC1FC1773B875005633D8 /* GLProtocolDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLProtocolDataStore.m; sourceTree = "<group>"; };
+		1A8AC2021773BE7A005633D8 /* GLHospitalDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLHospitalDataStore.h; sourceTree = "<group>"; };
+		1A8AC2031773BE7A005633D8 /* GLHospitalDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLHospitalDataStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,8 +127,10 @@
 		1A68A5691768E5E5007455BD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1A68A5A1176E8AF7007455BD /* GLDataStore.h */,
-				1A68A5A2176E8AF7007455BD /* GLDataStore.m */,
+				1A8AC1FB1773B875005633D8 /* GLProtocolDataStore.h */,
+				1A8AC1FC1773B875005633D8 /* GLProtocolDataStore.m */,
+				1A8AC2021773BE7A005633D8 /* GLHospitalDataStore.h */,
+				1A8AC2031773BE7A005633D8 /* GLHospitalDataStore.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -224,7 +229,8 @@
 				1A68A5581768E5BA007455BD /* main.m in Sources */,
 				1A68A55C1768E5BA007455BD /* GLAppDelegate.m in Sources */,
 				1A68A5A0176E8380007455BD /* GLHospitalViewController.m in Sources */,
-				1A68A5A3176E8AF7007455BD /* GLDataStore.m in Sources */,
+				1A8AC1FD1773B875005633D8 /* GLProtocolDataStore.m in Sources */,
+				1A8AC2041773BE7A005633D8 /* GLHospitalDataStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

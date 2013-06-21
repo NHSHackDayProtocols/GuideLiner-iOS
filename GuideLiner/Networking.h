@@ -10,3 +10,4 @@
 #endif
 
 #define kHospitalListURL @"http://corbett.li:4000/services/hospitalList"
+#define kBackgroundQueue DISPATCH_QUEUE_PRIORITY_DEFAULT

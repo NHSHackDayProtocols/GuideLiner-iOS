@@ -7,7 +7,8 @@
 //
 
 #import "GLHospitalViewController.h"
-#import "GLDataStore.h"
+#import "Networking.h"
+#import "GLHospitalDataStore.h"
 
 @interface GLHospitalViewController ()
 
@@ -24,8 +25,8 @@
     if (self)
     {
         // Custom initialisation
-        [self.tableView setDataSource:[GLDataStore sharedStore]];
-        [self.tableView setDelegate:[GLDataStore sharedStore]];
+        [self.tableView setDataSource:[GLHospitalDataStore sharedStore]];
+        [self.tableView setDelegate:self];
     }
     return self;
 }
@@ -33,6 +34,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self fetchHospitals];
+
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -41,31 +44,32 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-#pragma mark - Table view data source
+#pragma mark - Data Connection
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (void)fetchHospitals
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    dispatch_queue_t bgQueue = dispatch_get_global_queue(kBackgroundQueue, 0);
+    dispatch_async(bgQueue, ^{
+        NSData *data = [NSData dataWithContentsOfURL:
+                        [NSURL URLWithString:kHospitalListURL]];
+        [self performSelectorOnMainThread:@selector(fetchedData:) withObject:data waitUntilDone:YES];
+    });
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (void)fetchedData:(NSData *)responseData
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    NSError *error;
+    [GLHospitalDataStore sharedStore].hospitalList =
+        [NSJSONSerialization JSONObjectWithData:responseData
+                                        options:kNilOptions
+                                          error:&error];
     
-    // Configure the cell...
-    
-    return cell;
+    // dispose of the JSON
+    responseData = nil;
+    [self.tableView reloadData];
 }
+
+
 
 /*
 // Override to support conditional editing of the table view.
