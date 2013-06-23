@@ -15,6 +15,8 @@
 @synthesize hospitalList = _hospitalList;
 @synthesize currentHospital = _currentHospital;
 
+#pragma mark - Class methods
+
 + (GLHospitalDataStore *)sharedStore
 {
     static GLHospitalDataStore *sharedStore = nil;
@@ -25,6 +27,19 @@
             sharedStore = [[GLHospitalDataStore alloc] init];
     }
     return sharedStore;
+}
+
+#pragma  mark - Debug/logging
+ 
+- (void)logHospitals
+{
+    for (NSDictionary *hospital in self.hospitalList)
+        NSLog(@"%@", [hospital objectForKey:@"name"]);
+}
+
+- (void)enumerateHospitals
+{
+    NSLog(@"NUMBER OF HOSPITALS: %d", [self.hospitalList count]);
 }
 
 #pragma mark - UITableView data source

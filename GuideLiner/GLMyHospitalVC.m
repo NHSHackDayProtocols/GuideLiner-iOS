@@ -8,6 +8,8 @@
 
 #import "GLMyHospitalVC.h"
 #import "GLHospitalSelectVC.h"
+#import "GLHospitalDataStore.h"
+#import "Networking.h"
 
 @interface GLMyHospitalVC ()
 
@@ -15,6 +17,8 @@
 
 @implementation GLMyHospitalVC
 {
+    NSMutableData *hospitalJSON;
+    
     __weak IBOutlet UILabel *labelCurrentHospital;
 }
 
@@ -37,6 +41,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self fetchHospitals];
 }
 
 #pragma mark - Buttons
@@ -52,6 +57,56 @@
     [self presentViewController:hospitalSelectVC animated:YES completion:nil];
     
 }
+
+#pragma mark - Data Connection & delegate
+
+- (void)fetchHospitals
+{
+    hospitalJSON = [[NSMutableData alloc] init];
+    
+    NSURL *hospURL = [NSURL URLWithString:kHospitalListURL];
+    NSLog(@"Trying to connect to URL %@...", hospURL);
+    NSURLRequest *req = [[NSURLRequest alloc]
+                         initWithURL:hospURL
+                         cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
+                         timeoutInterval:60];
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:req delegate:self];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    connection = nil;
+    hospitalJSON = nil;
+    NSString *errorString = [NSString stringWithFormat:@"Fetch failed with error: %@", [error localizedDescription]];
+    NSLog(@"%@", errorString);
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    NSLog(@"Collecting some JSON...");
+    [hospitalJSON appendData:data];
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSLog(@"Connection complete...");
+    [self fetchedData:hospitalJSON];
+}
+
+- (void)fetchedData:(NSData *)responseData
+{
+    NSError *parseError;
+    NSLog(@"Deseriaising the received JSON...");
+    [GLHospitalDataStore sharedStore].hospitalList =
+    [NSJSONSerialization JSONObjectWithData:responseData
+                                    options:kNilOptions
+                                      error:&parseError];
+    
+    // dispose of the JSON
+    responseData = nil;
+    [[GLHospitalDataStore sharedStore] enumerateHospitals];
+}
+
 
 #pragma mark - Memory management
 

@@ -16,7 +16,4 @@
 
 
 
-- (void)fetchHospitals;
-- (void)fetchedData:(NSData *)responseData;
-
 @end

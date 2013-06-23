@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GLMyHospitalVC : UIViewController
+@interface GLMyHospitalVC : UIViewController <NSURLConnectionDataDelegate>
 
 - (IBAction)selectNearbyTapped:(id)sender;
 - (IBAction)selectFromListTapped:(id)sender;
+
+- (void)fetchHospitals;
+- (void)fetchedData:(NSData *)responseData;
 
 @end

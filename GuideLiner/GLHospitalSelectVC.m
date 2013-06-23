@@ -15,9 +15,7 @@
 @end
 
 @implementation GLHospitalSelectVC
-{
-    NSData *data;
-}
+{}
 
 @synthesize tableView = _tableView;
 @synthesize toolbar = _toolbar;
@@ -31,10 +29,6 @@
     if (self)
     {
         // Custom initialisation
-        
-        // Set delegate & data source
-        [self.tableView setDataSource:[GLHospitalDataStore sharedStore]];
-        [self.tableView setDelegate:self];
     }
     return self;
 }
@@ -42,14 +36,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self fetchHospitals];
-
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [[GLHospitalDataStore sharedStore] enumerateHospitals];
+    
+    // Set delegate & data source
+    [self.tableView setDataSource:[GLHospitalDataStore sharedStore]];
+    [self.tableView setDelegate:self];
 }
 #pragma mark - Buttons
 
@@ -57,31 +54,6 @@
 {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
-
-
-#pragma mark - Data Connection
-
-- (void)fetchHospitals
-{
-    NSLog(@"Trying to connect...");
-    
-    
-}
-
-- (void)fetchedData:(NSData *)responseData
-{
-    NSError *parseError;
-    [GLHospitalDataStore sharedStore].hospitalList =
-        [NSJSONSerialization JSONObjectWithData:responseData
-                                        options:kNilOptions
-                                          error:&parseError];
-    
-    // dispose of the JSON
-    responseData = nil;
-    [self.tableView reloadData];
-}
-
-
 
 /*
 // Override to support conditional editing of the table view.

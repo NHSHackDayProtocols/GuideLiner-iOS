@@ -16,5 +16,7 @@
 
 + (GLHospitalDataStore *)sharedStore;
 
+- (void)logHospitals;
+- (void)enumerateHospitals;
 
 @end
