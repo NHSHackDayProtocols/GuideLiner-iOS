@@ -7,12 +7,13 @@
 //
 
 #import "GLHospitalDataStore.h"
-#import "GLHospitalViewController.h"
+#import "GLHospitalSelectVC.h"
 
 @implementation GLHospitalDataStore
 {}
 
 @synthesize hospitalList = _hospitalList;
+@synthesize currentHospital = _currentHospital;
 
 + (GLHospitalDataStore *)sharedStore
 {
@@ -26,15 +27,13 @@
     return sharedStore;
 }
 
-#pragma mark - UITableViewDataSource
+#pragma mark - UITableView data source
 
-#warning - Incomplete implementation
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
 }
 
-#warning - Incomplete implementation
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     NSInteger hospCount = [self.hospitalList count];
@@ -43,7 +42,6 @@
     
 }
 
-#warning - Incomplete implementation
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Hospital_Cell"];

@@ -1,32 +1,25 @@
 //
-//  GLHospitalViewController.m
+//  GLMyProtocolsVC.m
 //  GuideLiner
 //
-//  Created by James Foxlee on 17/06/2013.
+//  Created by James Foxlee on 23/06/2013.
 //  Copyright (c) 2013 Goatfish. All rights reserved.
 //
 
-#import "GLHospitalViewController.h"
-#import "Networking.h"
-#import "GLHospitalDataStore.h"
+#import "GLMyProtocolsVC.h"
 
-@interface GLHospitalViewController ()
+@interface GLMyProtocolsVC ()
 
 @end
 
-@implementation GLHospitalViewController
-{}
-
-#pragma mark - Initialisation
+@implementation GLMyProtocolsVC
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
-    if (self)
-    {
-        // Custom initialisation
-        [self.tableView setDataSource:[GLHospitalDataStore sharedStore]];
-        [self.tableView setDelegate:self];
+    if (self) {
+        // Custom initialization
+        
     }
     return self;
 }
@@ -34,8 +27,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self fetchHospitals];
-
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -44,32 +35,40 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-#pragma mark - Data Connection
-
-- (void)fetchHospitals
+- (void)didReceiveMemoryWarning
 {
-    dispatch_queue_t bgQueue = dispatch_get_global_queue(kBackgroundQueue, 0);
-    dispatch_async(bgQueue, ^{
-        NSData *data = [NSData dataWithContentsOfURL:
-                        [NSURL URLWithString:kHospitalListURL]];
-        [self performSelectorOnMainThread:@selector(fetchedData:) withObject:data waitUntilDone:YES];
-    });
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
-- (void)fetchedData:(NSData *)responseData
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    NSError *error;
-    [GLHospitalDataStore sharedStore].hospitalList =
-        [NSJSONSerialization JSONObjectWithData:responseData
-                                        options:kNilOptions
-                                          error:&error];
+#warning Potentially incomplete method implementation.
+    // Return the number of sections.
+    return 0;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+#warning Incomplete method implementation.
+    // Return the number of rows in the section.
+    return 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
     
-    // dispose of the JSON
-    responseData = nil;
-    [self.tableView reloadData];
+    // Configure the cell...
+    
+    return cell;
 }
-
-
 
 /*
 // Override to support conditional editing of the table view.
@@ -121,14 +120,6 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
-}
-
-#pragma mark - Memory management
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

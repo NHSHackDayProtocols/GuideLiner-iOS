@@ -12,6 +12,7 @@
 {}
 
 @property NSMutableArray *hospitalList;
+@property NSString *currentHospital;
 
 + (GLHospitalDataStore *)sharedStore;
 

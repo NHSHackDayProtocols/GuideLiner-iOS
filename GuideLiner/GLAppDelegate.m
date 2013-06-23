@@ -8,7 +8,9 @@
 
 #import "GLAppDelegate.h"
 #import "GLHospitalDataStore.h"
-#import "GLHospitalViewController.h"
+#import "GLHospitalSelectVC.h"
+#import "GLMyHospitalVC.h"
+#import "GLSyncVC.h"
 
 @implementation GLAppDelegate
 
@@ -18,10 +20,16 @@
     
     // Override point for customization after application launch
     
-    GLHospitalViewController *hospitalsVC = [[GLHospitalViewController alloc] init];
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:hospitalsVC];
-    [hospitalsVC.view setBackgroundColor:[UIColor whiteColor]];
-    [self.window setRootViewController:navController];
+        
+    GLMyHospitalVC *changeVC = [[GLMyHospitalVC alloc] init];
+    GLSyncVC *syncVC = [[GLSyncVC alloc] init];
+    NSArray *arrayViewControllers = [[NSArray alloc] initWithObjects:
+                                     changeVC,
+                                     syncVC,
+                                     nil];
+    UITabBarController *tabVC = [[UITabBarController alloc] init];
+    tabVC.viewControllers = arrayViewControllers;
+    [self.window setRootViewController:tabVC];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

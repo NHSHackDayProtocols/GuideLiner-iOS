@@ -1,5 +1,5 @@
 //
-//  GLHospitalViewController.h
+//  GLHospitalSelectVC.h
 //  GuideLiner
 //
 //  Created by James Foxlee on 17/06/2013.
@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GLHospitalViewController : UITableViewController
+@interface GLHospitalSelectVC : UIViewController <UITableViewDelegate>
 {}
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UIToolbar *toolbar;
+
+
 
 - (void)fetchHospitals;
 - (void)fetchedData:(NSData *)responseData;
