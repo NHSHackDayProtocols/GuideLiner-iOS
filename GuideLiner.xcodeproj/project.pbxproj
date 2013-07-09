@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A0C7057178B40C50009F369 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0C7056178B40C50009F369 /* CoreLocation.framework */; };
+		1A6088BD1784A41000822E2F /* GLOrganisation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6088BC1784A41000822E2F /* GLOrganisation.m */; };
 		1A68A54C1768E5BA007455BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A68A54B1768E5BA007455BD /* UIKit.framework */; };
 		1A68A54E1768E5BA007455BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A68A54D1768E5BA007455BD /* Foundation.framework */; };
 		1A68A5501768E5BA007455BD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A68A54F1768E5BA007455BD /* CoreGraphics.framework */; };
@@ -16,12 +18,12 @@
 		1A68A55E1768E5BA007455BD /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A68A55D1768E5BA007455BD /* Default.png */; };
 		1A68A5601768E5BA007455BD /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A68A55F1768E5BA007455BD /* Default@2x.png */; };
 		1A68A5621768E5BA007455BD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A68A5611768E5BA007455BD /* Default-568h@2x.png */; };
-		1A68A5A5176E91CF007455BD /* Hospitals.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A68A5A4176E91CF007455BD /* Hospitals.plist */; };
+		1A68A5A5176E91CF007455BD /* Organisations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A68A5A4176E91CF007455BD /* Organisations.plist */; };
 		1A8AC1FD1773B875005633D8 /* GLProtocolDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8AC1FC1773B875005633D8 /* GLProtocolDataStore.m */; };
-		1A8AC2041773BE7A005633D8 /* GLHospitalDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8AC2031773BE7A005633D8 /* GLHospitalDataStore.m */; };
-		1A8AC20717767DBB005633D8 /* GLHospitalSelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8AC20617767DBB005633D8 /* GLHospitalSelectVC.m */; };
-		1A8AC20C17767EBD005633D8 /* GLMyHospitalVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8AC20A17767EBD005633D8 /* GLMyHospitalVC.m */; };
-		1A8AC20D17767EBD005633D8 /* GLMyHospitalVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A8AC20B17767EBD005633D8 /* GLMyHospitalVC.xib */; };
+		1A8AC2041773BE7A005633D8 /* GLOrganisationDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8AC2031773BE7A005633D8 /* GLOrganisationDataStore.m */; };
+		1A8AC20717767DBB005633D8 /* GLOrganisationSelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8AC20617767DBB005633D8 /* GLOrganisationSelectVC.m */; };
+		1A8AC20C17767EBD005633D8 /* GLMyOrganisationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8AC20A17767EBD005633D8 /* GLMyOrganisationVC.m */; };
+		1A8AC20D17767EBD005633D8 /* GLMyOrganisationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A8AC20B17767EBD005633D8 /* GLMyOrganisationVC.xib */; };
 		1A8AC217177686A2005633D8 /* SelectFromList_290_45.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8AC215177686A2005633D8 /* SelectFromList_290_45.png */; };
 		1A8AC218177686A2005633D8 /* SelectNearby_290_45.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8AC216177686A2005633D8 /* SelectNearby_290_45.png */; };
 		1A8AC2221776A371005633D8 /* GuideLiner.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8AC2211776A371005633D8 /* GuideLiner.png */; };
@@ -31,10 +33,13 @@
 		1A8AC22C1776A7DB005633D8 /* GLSyncVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8AC22A1776A7DB005633D8 /* GLSyncVC.m */; };
 		1A8AC22D1776A7DB005633D8 /* GLSyncVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A8AC22B1776A7DB005633D8 /* GLSyncVC.xib */; };
 		1A8AC2311776AB7E005633D8 /* GLMyProtocolsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8AC22F1776AB7E005633D8 /* GLMyProtocolsVC.m */; };
-		1A8AC2341776DD4A005633D8 /* GLHospitalSelectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A8AC2331776DD4A005633D8 /* GLHospitalSelectVC.xib */; };
+		1A8AC2341776DD4A005633D8 /* GLOrganisationSelectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A8AC2331776DD4A005633D8 /* GLOrganisationSelectVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A0C7056178B40C50009F369 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1A6088BB1784A41000822E2F /* GLOrganisation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLOrganisation.h; sourceTree = "<group>"; };
+		1A6088BC1784A41000822E2F /* GLOrganisation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLOrganisation.m; sourceTree = "<group>"; };
 		1A68A5481768E5BA007455BD /* GuideLiner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuideLiner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A68A54B1768E5BA007455BD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1A68A54D1768E5BA007455BD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -49,16 +54,16 @@
 		1A68A55F1768E5BA007455BD /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		1A68A5611768E5BA007455BD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		1A68A59D176E8209007455BD /* Networking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
-		1A68A5A4176E91CF007455BD /* Hospitals.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Hospitals.plist; sourceTree = "<group>"; };
+		1A68A5A4176E91CF007455BD /* Organisations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Organisations.plist; sourceTree = "<group>"; };
 		1A8AC1FB1773B875005633D8 /* GLProtocolDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLProtocolDataStore.h; sourceTree = "<group>"; };
 		1A8AC1FC1773B875005633D8 /* GLProtocolDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLProtocolDataStore.m; sourceTree = "<group>"; };
-		1A8AC2021773BE7A005633D8 /* GLHospitalDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLHospitalDataStore.h; sourceTree = "<group>"; };
-		1A8AC2031773BE7A005633D8 /* GLHospitalDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLHospitalDataStore.m; sourceTree = "<group>"; };
-		1A8AC20617767DBB005633D8 /* GLHospitalSelectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLHospitalSelectVC.m; sourceTree = "<group>"; };
-		1A8AC20817767E4B005633D8 /* GLHospitalSelectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLHospitalSelectVC.h; sourceTree = "<group>"; };
-		1A8AC20917767EBD005633D8 /* GLMyHospitalVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMyHospitalVC.h; sourceTree = "<group>"; };
-		1A8AC20A17767EBD005633D8 /* GLMyHospitalVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLMyHospitalVC.m; sourceTree = "<group>"; };
-		1A8AC20B17767EBD005633D8 /* GLMyHospitalVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GLMyHospitalVC.xib; sourceTree = "<group>"; };
+		1A8AC2021773BE7A005633D8 /* GLOrganisationDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLOrganisationDataStore.h; sourceTree = "<group>"; };
+		1A8AC2031773BE7A005633D8 /* GLOrganisationDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLOrganisationDataStore.m; sourceTree = "<group>"; };
+		1A8AC20617767DBB005633D8 /* GLOrganisationSelectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLOrganisationSelectVC.m; sourceTree = "<group>"; };
+		1A8AC20817767E4B005633D8 /* GLOrganisationSelectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLOrganisationSelectVC.h; sourceTree = "<group>"; };
+		1A8AC20917767EBD005633D8 /* GLMyOrganisationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMyOrganisationVC.h; sourceTree = "<group>"; };
+		1A8AC20A17767EBD005633D8 /* GLMyOrganisationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLMyOrganisationVC.m; sourceTree = "<group>"; };
+		1A8AC20B17767EBD005633D8 /* GLMyOrganisationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GLMyOrganisationVC.xib; sourceTree = "<group>"; };
 		1A8AC215177686A2005633D8 /* SelectFromList_290_45.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SelectFromList_290_45.png; sourceTree = "<group>"; };
 		1A8AC216177686A2005633D8 /* SelectNearby_290_45.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SelectNearby_290_45.png; sourceTree = "<group>"; };
 		1A8AC2211776A371005633D8 /* GuideLiner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GuideLiner.png; sourceTree = "<group>"; };
@@ -70,7 +75,7 @@
 		1A8AC22B1776A7DB005633D8 /* GLSyncVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GLSyncVC.xib; sourceTree = "<group>"; };
 		1A8AC22E1776AB7E005633D8 /* GLMyProtocolsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMyProtocolsVC.h; sourceTree = "<group>"; };
 		1A8AC22F1776AB7E005633D8 /* GLMyProtocolsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLMyProtocolsVC.m; sourceTree = "<group>"; };
-		1A8AC2331776DD4A005633D8 /* GLHospitalSelectVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GLHospitalSelectVC.xib; sourceTree = "<group>"; };
+		1A8AC2331776DD4A005633D8 /* GLOrganisationSelectVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GLOrganisationSelectVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A0C7057178B40C50009F369 /* CoreLocation.framework in Frameworks */,
 				1A68A54C1768E5BA007455BD /* UIKit.framework in Frameworks */,
 				1A68A54E1768E5BA007455BD /* Foundation.framework in Frameworks */,
 				1A68A5501768E5BA007455BD /* CoreGraphics.framework in Frameworks */,
@@ -90,6 +96,7 @@
 		1A68A53F1768E5BA007455BD = {
 			isa = PBXGroup;
 			children = (
+				1A0C7056178B40C50009F369 /* CoreLocation.framework */,
 				1A68A5511768E5BA007455BD /* GuideLiner */,
 				1A68A54A1768E5BA007455BD /* Frameworks */,
 				1A68A5491768E5BA007455BD /* Products */,
@@ -132,7 +139,7 @@
 			children = (
 				1A8AC20E1776817A005633D8 /* Images */,
 				1A68A5531768E5BA007455BD /* GuideLiner-Info.plist */,
-				1A68A5A4176E91CF007455BD /* Hospitals.plist */,
+				1A68A5A4176E91CF007455BD /* Organisations.plist */,
 				1A68A5541768E5BA007455BD /* InfoPlist.strings */,
 				1A68A5571768E5BA007455BD /* main.m */,
 				1A68A5591768E5BA007455BD /* GuideLiner-Prefix.pch */,
@@ -157,8 +164,10 @@
 			children = (
 				1A8AC1FB1773B875005633D8 /* GLProtocolDataStore.h */,
 				1A8AC1FC1773B875005633D8 /* GLProtocolDataStore.m */,
-				1A8AC2021773BE7A005633D8 /* GLHospitalDataStore.h */,
-				1A8AC2031773BE7A005633D8 /* GLHospitalDataStore.m */,
+				1A8AC2021773BE7A005633D8 /* GLOrganisationDataStore.h */,
+				1A8AC2031773BE7A005633D8 /* GLOrganisationDataStore.m */,
+				1A6088BB1784A41000822E2F /* GLOrganisation.h */,
+				1A6088BC1784A41000822E2F /* GLOrganisation.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -167,8 +176,8 @@
 			isa = PBXGroup;
 			children = (
 				1A8AC22B1776A7DB005633D8 /* GLSyncVC.xib */,
-				1A8AC20B17767EBD005633D8 /* GLMyHospitalVC.xib */,
-				1A8AC2331776DD4A005633D8 /* GLHospitalSelectVC.xib */,
+				1A8AC20B17767EBD005633D8 /* GLMyOrganisationVC.xib */,
+				1A8AC2331776DD4A005633D8 /* GLOrganisationSelectVC.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -178,10 +187,10 @@
 			children = (
 				1A8AC22E1776AB7E005633D8 /* GLMyProtocolsVC.h */,
 				1A8AC22F1776AB7E005633D8 /* GLMyProtocolsVC.m */,
-				1A8AC20917767EBD005633D8 /* GLMyHospitalVC.h */,
-				1A8AC20A17767EBD005633D8 /* GLMyHospitalVC.m */,
-				1A8AC20817767E4B005633D8 /* GLHospitalSelectVC.h */,
-				1A8AC20617767DBB005633D8 /* GLHospitalSelectVC.m */,
+				1A8AC20917767EBD005633D8 /* GLMyOrganisationVC.h */,
+				1A8AC20A17767EBD005633D8 /* GLMyOrganisationVC.m */,
+				1A8AC20817767E4B005633D8 /* GLOrganisationSelectVC.h */,
+				1A8AC20617767DBB005633D8 /* GLOrganisationSelectVC.m */,
 				1A8AC2291776A7DA005633D8 /* GLSyncVC.h */,
 				1A8AC22A1776A7DB005633D8 /* GLSyncVC.m */,
 			);
@@ -265,8 +274,8 @@
 				1A68A55E1768E5BA007455BD /* Default.png in Resources */,
 				1A68A5601768E5BA007455BD /* Default@2x.png in Resources */,
 				1A68A5621768E5BA007455BD /* Default-568h@2x.png in Resources */,
-				1A68A5A5176E91CF007455BD /* Hospitals.plist in Resources */,
-				1A8AC20D17767EBD005633D8 /* GLMyHospitalVC.xib in Resources */,
+				1A68A5A5176E91CF007455BD /* Organisations.plist in Resources */,
+				1A8AC20D17767EBD005633D8 /* GLMyOrganisationVC.xib in Resources */,
 				1A8AC217177686A2005633D8 /* SelectFromList_290_45.png in Resources */,
 				1A8AC218177686A2005633D8 /* SelectNearby_290_45.png in Resources */,
 				1A8AC2221776A371005633D8 /* GuideLiner.png in Resources */,
@@ -274,7 +283,7 @@
 				1A8AC2271776A506005633D8 /* MyProtocols_30_30.png in Resources */,
 				1A8AC2281776A506005633D8 /* Sync_30_30.png in Resources */,
 				1A8AC22D1776A7DB005633D8 /* GLSyncVC.xib in Resources */,
-				1A8AC2341776DD4A005633D8 /* GLHospitalSelectVC.xib in Resources */,
+				1A8AC2341776DD4A005633D8 /* GLOrganisationSelectVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,11 +297,12 @@
 				1A68A5581768E5BA007455BD /* main.m in Sources */,
 				1A68A55C1768E5BA007455BD /* GLAppDelegate.m in Sources */,
 				1A8AC1FD1773B875005633D8 /* GLProtocolDataStore.m in Sources */,
-				1A8AC2041773BE7A005633D8 /* GLHospitalDataStore.m in Sources */,
-				1A8AC20717767DBB005633D8 /* GLHospitalSelectVC.m in Sources */,
-				1A8AC20C17767EBD005633D8 /* GLMyHospitalVC.m in Sources */,
+				1A8AC2041773BE7A005633D8 /* GLOrganisationDataStore.m in Sources */,
+				1A8AC20717767DBB005633D8 /* GLOrganisationSelectVC.m in Sources */,
+				1A8AC20C17767EBD005633D8 /* GLMyOrganisationVC.m in Sources */,
 				1A8AC22C1776A7DB005633D8 /* GLSyncVC.m in Sources */,
 				1A8AC2311776AB7E005633D8 /* GLMyProtocolsVC.m in Sources */,
+				1A6088BD1784A41000822E2F /* GLOrganisation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

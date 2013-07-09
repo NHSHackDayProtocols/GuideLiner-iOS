@@ -9,7 +9,7 @@
 #define GuideLiner_Networking_h
 #endif
 
-#define kHospitalListURL @"http://corbett.li:4000/services/hospitalList"
-#define kProtocolsForHospitalURL @"http://corbett.li:4000/services/getHospitalProtocols/"
+#define kOrganisationsListURL @"http://corbett.li:4000/services/hospitalList"
+#define kProtocolsForOrganisationURL @"http://corbett.li:4000/services/getHospitalProtocols/"
 
 #define kBackgroundQueue DISPATCH_QUEUE_PRIORITY_DEFAULT

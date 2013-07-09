@@ -1,5 +1,5 @@
 //
-//  GLChangeHospitalVC.h
+//  GLMyOrganisationVC.h
 //  GuideLiner
 //
 //  Created by James Foxlee on 23/06/2013.
@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GLMyHospitalVC : UIViewController <NSURLConnectionDataDelegate>
+@interface GLMyOrganisationVC : UIViewController <NSURLConnectionDataDelegate>
 
 - (IBAction)selectNearbyTapped:(id)sender;
 - (IBAction)selectFromListTapped:(id)sender;
 
-- (void)fetchHospitals;
-- (void)fetchedData:(NSData *)responseData;
+- (void)fetchOrganisations;
+- (void)parseOrganisationJSON:(NSData *)json;
 
 @end

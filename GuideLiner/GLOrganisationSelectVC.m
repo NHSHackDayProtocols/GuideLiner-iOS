@@ -6,15 +6,15 @@
 //  Copyright (c) 2013 Goatfish. All rights reserved.
 //
 
-#import "GLHospitalSelectVC.h"
+#import "GLOrganisationSelectVC.h"
 #import "Networking.h"
-#import "GLHospitalDataStore.h"
+#import "GLOrganisationDataStore.h"
 
-@interface GLHospitalSelectVC ()
+@interface GLOrganisationSelectVC ()
 
 @end
 
-@implementation GLHospitalSelectVC
+@implementation GLOrganisationSelectVC
 {}
 
 @synthesize tableView = _tableView;
@@ -28,7 +28,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
-        // Custom initialisation
+        // do stuff
     }
     return self;
 }
@@ -42,10 +42,15 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    [[GLHospitalDataStore sharedStore] enumerateHospitals];
+    
+    [[GLOrganisationDataStore sharedStore] enumerateOrganisations];
+    [[GLOrganisationDataStore sharedStore] logOrganisations];
+    
+    // observe the DataStore for changes
+    [[GLOrganisationDataStore sharedStore] addObserver:self forKeyPath:@"dictIsSorted" options:0 context:NULL];
     
     // Set delegate & data source
-    [self.tableView setDataSource:[GLHospitalDataStore sharedStore]];
+    [self.tableView setDataSource:[GLOrganisationDataStore sharedStore]];
     [self.tableView setDelegate:self];
 }
 #pragma mark - Buttons
@@ -93,6 +98,14 @@
     return YES;
 }
 */
+
+#pragma mark - KVO
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    NSLog(@"Data received, refreshing table view...");
+    [self.tableView  performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
+}
 
 #pragma mark - Table view delegate
 

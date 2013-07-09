@@ -7,12 +7,14 @@
 //
 
 #import "GLAppDelegate.h"
-#import "GLHospitalDataStore.h"
-#import "GLHospitalSelectVC.h"
-#import "GLMyHospitalVC.h"
+#import "GLOrganisationDataStore.h"
+#import "GLOrganisationSelectVC.h"
+#import "GLMyOrganisationVC.h"
 #import "GLSyncVC.h"
 
 @implementation GLAppDelegate
+
+#pragma mark - Launch
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -21,10 +23,10 @@
     // Override point for customization after application launch
     
         
-    GLMyHospitalVC *changeVC = [[GLMyHospitalVC alloc] init];
+    GLMyOrganisationVC *myOrgVC = [[GLMyOrganisationVC alloc] init];
     GLSyncVC *syncVC = [[GLSyncVC alloc] init];
     NSArray *arrayViewControllers = [[NSArray alloc] initWithObjects:
-                                     changeVC,
+                                     myOrgVC,
                                      syncVC,
                                      nil];
     UITabBarController *tabVC = [[UITabBarController alloc] init];
@@ -35,6 +37,8 @@
     [self.window makeKeyAndVisible];
     return YES;
 }
+
+#pragma mark - Transitions & memory
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
